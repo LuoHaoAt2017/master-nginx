@@ -8,14 +8,14 @@ module.exports = {
     index: "./client/index.js",
   },
   output: {
-    filename: "[name].bundle.js",
-    path: path.join(__dirname, "build"),
+    filename: "[name].js",
+    path: path.join(__dirname, "dist"),
   },
   module: {
     rules: [
       {
         test: /\.js$/,
-        use: ["babel-loader"],
+        loader: "babel-loader",
       },
       {
         test: /\.vue$/,
@@ -24,6 +24,10 @@ module.exports = {
       {
         test: /\.(css|less)$/,
         use: ["vue-style-loader", "css-loader", "less-loader"],
+      },
+      {
+        test: /\.(jpg|jpeg|png|svg)$/,
+        type: "asset/resource",
       },
     ],
   },
@@ -36,4 +40,9 @@ module.exports = {
       title: "master-nginx",
     }),
   ],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname),
+    },
+  },
 };

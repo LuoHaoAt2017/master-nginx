@@ -1,10 +1,10 @@
 {
   "name": "master-nginx",
   "version": "1.0.0",
-  "description": "docker nginx",
+  "description": "webpack nginx",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack.config.dev.js",
+    "start": "webpack --config ./webpack.config.dev.js",
     "build": "webpack --config ./webpack.config.prod.js",
     "serve": "nodemon server/index.js",
     "commit": "git add . && git-cz",
@@ -21,10 +21,13 @@
   },
   "homepage": "https://github.com/LuoHaoAt2017/master-nginx#readme",
   "dependencies": {
+    "ant-design-vue": "^1.7.8",
     "express": "^4.17.2",
+    "html-loader": "^3.1.0",
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.15",
     "sequelize": "^7.0.0-alpha2.2",
+    "url-loader": "^4.1.1",
     "vue": "^2.6.14",
     "vue-router": "^3.5.3",
     "vuex": "^3.6.2"
