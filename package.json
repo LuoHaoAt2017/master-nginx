@@ -4,6 +4,7 @@
   "description": "webpack nginx",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack-dev-server --config ./webpack.config.dev.js",
     "start": "webpack --config ./webpack.config.dev.js",
     "build": "webpack --config ./webpack.config.prod.js",
     "serve": "nodemon server/index.js",
